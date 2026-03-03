@@ -85,11 +85,10 @@ https://www.kaggle.com/datasets/amaldev007/driver-drowsiness-detection-system-da
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/driver-drowsiness-detection.git
+git clone https://github.com/Sanjay83174/Driver-Drowsiness-Detection-System.git
 cd driver-drowsiness-detection
 ```
 
-(Replace with your actual repository link)
 
 ---
 
