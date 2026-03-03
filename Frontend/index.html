@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Drowsiness Detection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Drowsiness Detection System</h1>
+      <p>
+        Real-time driver drowsiness detection using a CNN on face, eyes, mouth, and
+        overall facial activity.
+      </p>
+    </header>
+
+    <main class="app-main">
+      <section class="tabs">
+        <button id="tab-live" class="tab-button active">Live Camera</button>
+        <button id="tab-upload" class="tab-button">Upload Image / Video</button>
+      </section>
+
+      <section id="live-section" class="panel active">
+        <div class="panel-header">
+          <h2>Live Camera Detection</h2>
+          <p>
+            Start your webcam and keep your face visible. The system monitors eye
+            closure duration and yawning patterns from the model’s drowsiness
+            probability over time.
+          </p>
+        </div>
+        <div class="live-grid">
+          <div class="video-container">
+            <video id="live-video" autoplay playsinline></video>
+            <canvas id="live-canvas" class="hidden"></canvas>
+          </div>
+          <div class="status-card">
+            <div class="status-row">
+              <span class="status-label">Current state:</span>
+              <span id="live-state" class="badge neutral">Idle</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">Drowsy probability (Accuracy):</span>
+              <span id="live-prob">-</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">Drowsiness duration:</span>
+              <span id="live-duration">0.0 s</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">Warnings:</span>
+              <span id="live-warning">None</span>
+            </div>
+            <div class="controls">
+              <button id="start-live" class="primary">Start Camera</button>
+              <button id="stop-live" class="secondary" disabled>Stop</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="upload-section" class="panel">
+        <div class="panel-header">
+          <h2>Upload Image / Video</h2>
+          <p>
+            Choose a single face image or a driving video. The model analyzes each
+            frame and reports drowsiness segments (eyes closed &gt; 3–4 seconds or
+            repeated yawning-like patterns).
+          </p>
+        </div>
+        <div class="upload-card">
+          <input id="file-input" type="file" accept="image/*,video/*" />
+          <button id="analyze-file" class="primary">Analyze</button>
+          <div class="upload-preview">
+            <img id="upload-preview-image" class="hidden" alt="Uploaded preview" />
+          </div>
+          <div id="upload-status" class="upload-status"></div>
+          <div id="upload-result" class="upload-result"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Backend: TensorFlow CNN model · Frontend: HTML5 + JavaScript · Live and
+        offline drowsiness detection.
+      </p>
+    </footer>
+  </div>
+
+  <audio id="drowsy-alarm" preload="auto" style="display: none;"></audio>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
