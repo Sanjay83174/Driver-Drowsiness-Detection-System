@@ -37,8 +37,10 @@ The trained model is integrated into a user-friendly web application for real-ti
 
 🔢 NumPy
 
-📂 Project Structure
 
+## 📂 Project Structure
+
+```
 Driver-Drowsiness-Detection/
 │
 ├── 0 FaceImages/              # Dataset (Not uploaded to GitHub)
@@ -52,6 +54,7 @@ Driver-Drowsiness-Detection/
 ├── app.py                     # Flask web application
 ├── requirements.txt           # Project dependencies
 └── README.md
+```
 
 📊 Dataset Information
 
