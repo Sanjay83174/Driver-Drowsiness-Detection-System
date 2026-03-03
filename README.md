@@ -1,44 +1,44 @@
-🚗 Driver Drowsiness Detection System 😴⚠️
+# 🚗 Driver Drowsiness Detection System 😴⚠️
 
-An AI-powered Driver Drowsiness Detection System built using Deep Learning (CNN) and deployed with a Flask Web Application.
+An AI-powered **Driver Drowsiness Detection System** built using Deep Learning (CNN) and deployed with a Flask Web Application.
 
-This project detects whether a driver is Alert (Active) or Drowsy (Fatigued) using:
+This system detects whether a driver is:
 
-🎥 Live Webcam Detection
+- ✅ Active (Alert)
+- 😴 Fatigued (Drowsy)
 
-🖼️ Image Upload
+It supports:
 
-🎬 Video Upload
+- 🎥 Live Webcam Detection
+- 🖼️ Image Upload
+- 🎬 Video Upload
 
-The goal is to help reduce road accidents caused by driver fatigue.
+---
 
-📌 Project Overview
+# 📌 Project Overview
 
-Driver drowsiness is one of the leading causes of road accidents worldwide.
+Driver drowsiness is one of the major causes of road accidents.  
 This project uses a Convolutional Neural Network (CNN) to classify driver faces into two categories:
 
-✅ Active Subjects (Alert / Awake Drivers)
+- **Active Subjects** – Alert / Awake Drivers  
+- **Fatigue Subjects** – Drowsy / Sleepy Drivers  
 
-😴 Fatigue Subjects (Drowsy / Sleepy Drivers)
+The trained model is integrated into a web application for real-time monitoring.
 
-The trained model is integrated into a user-friendly web application for real-time detection.
+---
 
-🧠 Tech Stack
+# 🧠 Tech Stack
 
-🐍 Python
+- Python  
+- TensorFlow / Keras  
+- OpenCV  
+- Flask  
+- Pillow  
+- NumPy  
 
-🤖 TensorFlow / Keras
+---
 
-📷 OpenCV
-
-🌐 Flask
-
-🖼️ Pillow
-
-🔢 NumPy
-
-
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
 Driver-Drowsiness-Detection/
@@ -56,153 +56,156 @@ Driver-Drowsiness-Detection/
 └── README.md
 ```
 
-📊 Dataset Information
+---
 
-This project uses the Driver Drowsiness Detection Dataset from Kaggle:
+# 📊 Dataset
 
-🔗 Dataset Link:
+This project uses the Driver Drowsiness Detection dataset from Kaggle:
+
+Dataset Link:  
 https://www.kaggle.com/datasets/amaldev007/driver-drowsiness-detection-system-dataset
 
-Dataset Structure
-
-After downloading, organize it like this:
-
-### Dataset Folder Structure
+## Dataset Folder Structure
 
 ```
 0 FaceImages/
 ├── Active Subjects/
 └── Fatigue Subjects/
 ```
-   Active Subjects → Alert driver images
 
-Fatigue Subjects → Drowsy driver images
+- Active Subjects → Alert driver images  
+- Fatigue Subjects → Drowsy driver images  
 
-Labels are automatically inferred from folder names.
+⚠️ Note: The dataset is not included in this repository to keep the project lightweight.
 
-⚠️ The dataset is not included in this repository to keep the project lightweight and professional.
+---
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
+# ⚙️ Installation & Setup
 
+## 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/your-username/driver-drowsiness-detection.git
 cd driver-drowsiness-detection
+```
 
-2️⃣ Install Required Packages
+(Replace with your actual repository link)
 
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-3️⃣ Download the Dataset
+---
 
-Download the dataset from the Kaggle link above.
+## 3️⃣ Download Dataset
 
-Place it inside:
+Download from Kaggle and place inside:
 
+```
 0 FaceImages/
+```
 
-Make sure the folder structure matches exactly.
+Make sure the folder structure matches exactly as shown above.
 
-🏋️ Train the CNN Model
+---
+
+# 🏋️ Train the Model
 
 Run:
+
+```bash
 python train_model.py
+```
 
-🔍 During Training, the Script Will:
+During training, the script will:
 
-Analyze class distribution
+- Analyze dataset
+- Split into 80% training and 20% validation
+- Apply data augmentation
+- Train CNN model
+- Save best model to:
 
-Split dataset into training and validation (80/20)
-
-Apply data augmentation
-
-Train CNN model
-
-Save best model to:
-
+```
 saved_models/drowsiness_cnn.h5
+```
 
-🌐 Run the Web Application
+---
+
+# 🌐 Run the Web Application
 
 After training is complete:
 
+```bash
 python app.py
+```
 
-Then open your browser:
+Open your browser and go to:
 
+```
 http://localhost:5000
+```
 
-🎥 Application Features
-🔴 Live Camera Detection
+---
 
-Uses webcam
+# 🎥 Application Features
 
-Real-time face detection
+## 🔴 Live Camera Detection
+- Real-time webcam monitoring
+- Instant classification result
 
-Instant prediction (Active / Drowsy)
+## 🖼️ Image Upload
+- Upload a driver image
+- Get prediction immediately
 
-🖼️ Image Upload
+## 🎬 Video Upload
+- Upload recorded driving video
+- Frame-by-frame drowsiness detection
 
-Upload a driver image
+---
 
-Get classification result instantly
+# 🧪 Model Details
 
-🎬 Video Upload
+- Convolutional Neural Network (CNN)
+- Binary Classification
+- Data Augmentation
+- Dropout Regularization
+- Binary Crossentropy Loss
+- Adam Optimizer
 
-Upload recorded driving video
+---
 
-Frame-by-frame drowsiness detection
+# 🚀 Future Improvements
 
-🧪 Model Details
+- Add alarm sound when drowsiness detected
+- Deploy to cloud (AWS / Render)
+- Improve accuracy with larger dataset
+- Mobile application integration
+- Eye Aspect Ratio based hybrid detection
 
-Convolutional Neural Network (CNN)
+---
 
-Binary Classification
+# 💡 Real-World Applications
 
-Data Augmentation
+- Smart Vehicles
+- Truck Driver Monitoring
+- Public Transport Safety
+- Industrial Operator Monitoring
 
-Dropout Regularization
+---
 
-Loss Function: Binary Crossentropy
+# 👨‍💻 Author
 
-Optimizer: Adam
-
-🚀 Future Improvements
-
-🔊 Add alarm sound when drowsiness detected
-
-📱 Convert into mobile application
-
-🌍 Deploy to cloud (AWS / Render / Heroku)
-
-😎 Hybrid detection using Eye Aspect Ratio
-
-🎯 Improve accuracy using larger dataset
-
-💡 Real-World Applications
-
-🚛 Truck Driver Monitoring Systems
-
-🚗 Smart Vehicles
-
-🚌 Public Transport Safety
-
-🏭 Industrial Operator Monitoring
-
-👨‍💻 Author
-
-Sanjay HL
+Sanjay HL  
 Deep Learning & Computer Vision Enthusiast
 
 If you found this project useful, please ⭐ star the repository!
 
-📜 License
+---
+
+# 📜 License
 
 This project is developed for educational and research purposes.
-
-⭐ Why This Project Stands Out
-
-✔ Real-world safety problem
-✔ Deep Learning + Computer Vision
-✔ End-to-end pipeline (Training → Deployment)
-✔ Interactive Web Application
-✔ Clean and professional ML project structure
