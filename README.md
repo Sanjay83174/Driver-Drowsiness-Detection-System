@@ -67,10 +67,13 @@ Dataset Structure
 
 After downloading, organize it like this:
 
-0 FaceImages/
-   ├── Active Subjects/
-   └── Fatigue Subjects/
+### Dataset Folder Structure
 
+```
+0 FaceImages/
+├── Active Subjects/
+└── Fatigue Subjects/
+```
    Active Subjects → Alert driver images
 
 Fatigue Subjects → Drowsy driver images
